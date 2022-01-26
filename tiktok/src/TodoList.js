@@ -1,12 +1,19 @@
 import {useState} from 'react'
 function ToDoListComponent(){
     const [task,setTask] = useState();
-    const [tasks,setTasks] = useState(JSON.parse(localStorage.getItem('tasks'))||[]);
+    const [tasks,setTasks] = useState(()=>{
+        // get data from localStorage
+        const dataFromLocalStorage = JSON.parse(localStorage.getItem('tasks'))
+        
+        console.log(dataFromLocalStorage)
+        
+        return dataFromLocalStorage??[]
+    });
     const handleClick = ()=>{
         console.log('Add button clicked')
         if(task!==''){
-            setTasks(prevState=>{
-                const newTasks = [...prevState, task]
+            setTasks(prevTasks=>{
+                const newTasks = [...prevTasks, task]
                 
                 //save to local storage
                 localStorage.setItem('tasks', JSON.stringify(newTasks));
