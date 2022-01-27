@@ -6,6 +6,7 @@ import Form from './Form.js'
 import Counter from './Counter.js'
 import CountDown from './CountDown.js'
 import PreviewAvatar from './PreviewAvatar.js'
+import ChatApp from './ChatApp.js'
 function App() {
   const [showIncrease,setShowIncrease] = useState(false);
   const [showForm,setShowForm] = useState(false);
@@ -14,6 +15,7 @@ function App() {
   const [showCallApi,setShowCallApi] = useState(false);
   const [showCountDown,setShowCountDown] = useState(false);
   const [showPreview,setShowPreview] = useState(false);
+  const [showChatApp,setShowChatApp] = useState(false);
   return (
     <div className="App" style={{padding:20}}>
       
@@ -24,6 +26,7 @@ function App() {
       <button onClick={()=>(setShowCallApi(!showCallApi))}>Toggle api content</button>
       <button onClick={()=>(setShowCountDown(!showCountDown))}>Toggle count down</button>
       <button onClick={()=>(setShowPreview(!showPreview))}>Toggle PreviewAvatar</button>
+      <button onClick={()=>(setShowChatApp(!showChatApp))}>Toggle chat app</button>
       {showIncrease && <Counter />}
       {showForm && <Form />}
       {showRandomGift && <Gifts />}
@@ -31,6 +34,7 @@ function App() {
       {showCallApi&&<ContentCallApi />}
       {showCountDown && <CountDown />}
       {showPreview && <PreviewAvatar />}
+      {showChatApp && <ChatApp />}
     </div>
   );
 }
