@@ -1,25 +1,49 @@
-import React, {useState} from 'react'
-const orders = [100,200,300]
+import {useRef,useState,useEffect,useCallback} from 'react'
+import Content from './Memo.js'
+
+// useCallback()
+  // - Reference types
+  // - React memo()
 
 function Counter() {
-  // random counter
-  const [counter, setCounter] = useState(()=>{
-    const total = orders.reduce((total, order) => total + order)
-    return total
-  })
-  
-  const handleIncrease = ()=>{
-    // setCounter(counter + 1)
-    // setCounter(counter + 1)
-    // setCounter(counter + 1)    
-    setCounter(prevCounter => prevCounter+1)
+  const [count,setCount] = useState(60)
+  const [number,setNumber] = useState(0)
+  const timerId = useRef();
+  const prevCount = useRef();
+  const h1Ref = useRef();
+  useEffect(() => {
+    if(count%2===0){
+      h1Ref.current.style={color:'red'}
+    }
+    else{
+      h1Ref.current.style={color:'black'}
+    }
+  });
+  useEffect(()=>{
+    prevCount.current = count;
+  },[count])
+  const onHandleStart = ()=>{
+    timerId.current = setInterval(()=>{
+        setCount(prev=>prev-1);
+      },1000);
   }
+  const onHandleStop = ()=>{
+    clearInterval(timerId.current);
+  }
+  const onHandleClickMe = useCallback( ()=>{
+    setNumber(number+1)
+  },[])
+  console.log(count,prevCount.current);
   return (
-    <React.Fragment>
-      <h1>{counter}</h1>
-      <button onClick={handleIncrease} >Increase</button>
-    </React.Fragment>
-  );
+
+      <div>
+        <h1 ref={h1Ref}>{count}</h1>
+        <button onClick={onHandleStart}>Start</button>
+        <button onClick={onHandleStop}>Stop</button>
+        <Content onIncrease = {onHandleClickMe} /> 
+        <h1>{number}</h1>
+      </div>
+    )
 }
 
 export default Counter;
