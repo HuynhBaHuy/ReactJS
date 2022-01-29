@@ -1,22 +1,22 @@
-import { useImperativeHandle,useRef,useEffect } from 'react'
+import { useRef,useEffect } from 'react'
 import Video from './Video'
 
 function Media() {
-    const videoRef = useRef()
+    const VideoComponentRef = useRef()
 
     useEffect(() => {
-        console.log(videoRef.current)
+        console.log(VideoComponentRef.current)
     });
     const handlePlay = ()=>{
-        videoRef.current.play()
+        VideoComponentRef.current.play()
     }
     const handlePause = ()=>{
-        videoRef.current.pause()
+        VideoComponentRef.current.pause()
     }
     return(
         <div>
             <Video
-                ref={videoRef}
+                ref={VideoComponentRef}
              />
             <br />
             <button onClick={handlePlay}>Play</button>
