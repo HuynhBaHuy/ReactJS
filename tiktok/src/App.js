@@ -9,6 +9,8 @@ import PreviewAvatar from './PreviewAvatar.js'
 import ChatApp from './ChatApp.js'
 import Product from './Product.js'
 import UpDown from './UpDown.js'
+import ToDoApp from './ToDo'
+
 function App() {
   const [showIncrease,setShowIncrease] = useState(false);
   const [showForm,setShowForm] = useState(false);
@@ -20,6 +22,7 @@ function App() {
   const [showChatApp,setShowChatApp] = useState(false);
   const [showProduct,setShowProduct] = useState(false);
   const [showUpDown,setShowUpDown] = useState(false);
+  const [showToDo,setShowToDo] = useState(false);
   return (
     <div className="App" style={{padding:20}}>
       
@@ -43,6 +46,8 @@ function App() {
       <br />
       <button onClick={()=>(setShowUpDown(!showUpDown))}>Toggle up down</button>
       <br />
+      <button onClick={()=>(setShowToDo(!showToDo))}>Toggle to do</button>
+      <br />
       {showIncrease && <Counter />}
       {showForm && <Form />}
       {showRandomGift && <Gifts />}
@@ -53,6 +58,7 @@ function App() {
       {showChatApp && <ChatApp />}
       {showProduct && <Product />}
       {showUpDown && <UpDown />}
+      {showToDo && <ToDoApp />}
     </div>
   );
 }
