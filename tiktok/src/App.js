@@ -1,14 +1,14 @@
 import {useState} from 'react'
-import ToDoListComponent from './TodoList';
-import ContentCallApi from './Content.js'
-import Gifts from './Gift.js'
-import Form from './Form.js'
-import Counter from './Counter.js'
-import CountDown from './CountDown.js'
-import PreviewAvatar from './PreviewAvatar.js'
-import ChatApp from './ChatApp.js'
-import Product from './Product.js'
-import UpDown from './UpDown.js'
+import List from './List';
+import ApiContent from './ApiContent'
+import Gifts from './RandomGift'
+import Form from './Form'
+import Counter from './Counter'
+import CountDown from './CountDown'
+import Avatar from './Avatar'
+import ChatApp from './Chat'
+import Product from './Product'
+import UpDown from './Control'
 import ToDoApp from './ToDo'
 
 function App() {
@@ -51,10 +51,10 @@ function App() {
       {showIncrease && <Counter />}
       {showForm && <Form />}
       {showRandomGift && <Gifts />}
-      {showToDoList && <ToDoListComponent />}
-      {showCallApi&&<ContentCallApi />}
+      {showToDoList && <List />}
+      {showCallApi&&<ApiContent />}
       {showCountDown && <CountDown />}
-      {showPreview && <PreviewAvatar />}
+      {showPreview && <Avatar />}
       {showChatApp && <ChatApp />}
       {showProduct && <Product />}
       {showUpDown && <UpDown />}
