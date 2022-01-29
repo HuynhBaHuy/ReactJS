@@ -12,6 +12,7 @@ import Product from './Component/Product'
 import UpDown from './Component/Control'
 import ToDoApp from './Component/ToDo'
 import Theme from './Component/ThemeComponent'
+import ToDoGlobals from './Component/ToDoGlobals'
 function App() {
   const [showIncrease,setShowIncrease] = useState(false);
   const [showForm,setShowForm] = useState(false);
@@ -25,6 +26,7 @@ function App() {
   const [showUpDown,setShowUpDown] = useState(false);
   const [showToDo,setShowToDo] = useState(false);
   const [showThemes,setShowThemes] = useState(false);
+  const [showToDoGlobal,setShowToDoGlobal] = useState(false);
   return (
     <div className="App" style={{padding:20}}>
       
@@ -52,6 +54,8 @@ function App() {
       <br />
       <button onClick={()=>(setShowThemes(!showThemes))}>Toggle themes</button>
       <br />
+      <button onClick={()=>(setShowToDoGlobal(!showToDoGlobal))}>Toggle to do global</button>
+      <br />
       {showIncrease && <Counter />}
       {showForm && <Form />}
       {showRandomGift && <Gifts />}
@@ -64,6 +68,7 @@ function App() {
       {showUpDown && <UpDown />}
       {showToDo && <ToDoApp />}
       {showThemes && <Theme />}
+      {showToDoGlobal && <ToDoGlobals />}
     </div>
   );
 }
