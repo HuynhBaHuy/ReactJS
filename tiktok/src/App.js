@@ -1,3 +1,4 @@
+import './App.css'
 import {useState} from 'react'
 import List from './List';
 import ApiContent from './ApiContent'
@@ -10,7 +11,7 @@ import ChatApp from './Chat'
 import Product from './Product'
 import UpDown from './Control'
 import ToDoApp from './ToDo'
-
+import Theme from './Theme'
 function App() {
   const [showIncrease,setShowIncrease] = useState(false);
   const [showForm,setShowForm] = useState(false);
@@ -23,6 +24,7 @@ function App() {
   const [showProduct,setShowProduct] = useState(false);
   const [showUpDown,setShowUpDown] = useState(false);
   const [showToDo,setShowToDo] = useState(false);
+  const [showThemes,setShowThemes] = useState(false);
   return (
     <div className="App" style={{padding:20}}>
       
@@ -48,6 +50,8 @@ function App() {
       <br />
       <button onClick={()=>(setShowToDo(!showToDo))}>Toggle to do</button>
       <br />
+      <button onClick={()=>(setShowThemes(!showThemes))}>Toggle themes</button>
+      <br />
       {showIncrease && <Counter />}
       {showForm && <Form />}
       {showRandomGift && <Gifts />}
@@ -59,6 +63,7 @@ function App() {
       {showProduct && <Product />}
       {showUpDown && <UpDown />}
       {showToDo && <ToDoApp />}
+      {showThemes && <Theme />}
     </div>
   );
 }
