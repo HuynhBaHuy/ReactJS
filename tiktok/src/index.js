@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {BrowserRouter} from 'react-router-dom'
 import './index.css';
 import App from './App'
 import reportWebVitals from './reportWebVitals';
@@ -22,12 +23,14 @@ emitComment(3)
 ReactDOM.render(
   <React.StrictMode>
     <StoreProvider>
-      <ThemeProvider>
-      <GlobalStyles >
-        <App />;
-      </GlobalStyles>
-      </ThemeProvider>
-    </StoreProvider>
+        <ThemeProvider>
+          <GlobalStyles >
+            <BrowserRouter>
+              <App />;
+            </BrowserRouter>
+          </GlobalStyles>
+        </ThemeProvider>
+      </StoreProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

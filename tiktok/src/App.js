@@ -1,5 +1,7 @@
-import './App.css'
 import {useState} from 'react'
+import {Routes, Route, Link} from 'react-router-dom'
+
+import './App.css'
 import List from './Component/List';
 import ApiContent from './Component/ApiContent'
 import Gifts from './Component/RandomGift'
@@ -15,6 +17,9 @@ import Theme from './Component/ThemeComponent'
 import ToDoGlobals from './Component/ToDoGlobals'
 import Media from './Component/Media'
 import Button from './Component/Button'
+import HomePage from './pages/Home'
+import ContactPage from './pages/Contact'
+import NewsPage from './pages/News'
 function App() {
   const [showIncrease,setShowIncrease] = useState(false);
   const [showForm,setShowForm] = useState(false);
@@ -61,6 +66,25 @@ function App() {
       {showThemes && <Theme />}
       {showToDoGlobal && <ToDoGlobals />}
       {showMedia && <Media />}
+
+      <nav>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/News">News</Link>
+          </li>
+          <li>
+            <Link to="/Contact">Contact</Link>
+          </li>
+        </ul>
+      </nav>
+      <Routes>
+        <Route path="/" element = {<HomePage />} />
+        <Route path="/News" element = {<NewsPage />} />
+        <Route path="/Contact" element = {<ContactPage />} />
+      </Routes>
     </div>
   );
 }
