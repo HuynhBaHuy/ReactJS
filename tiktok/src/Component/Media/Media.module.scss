@@ -1,0 +1,12 @@
+.video {
+    width: 280px;
+    &:hover{
+        cursor:pointer;
+        opacity:0.9;
+    }
+}
+
+.container {
+    margin-top:10px;
+    border-radius: 3px;
+}

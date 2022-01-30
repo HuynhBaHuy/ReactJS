@@ -1,6 +1,8 @@
 import {forwardRef,useImperativeHandle,useRef} from 'react'
-import video1 from '../../videos/video-1.mp4'
+import clsx from 'clsx'
 
+import video1 from '../../videos/video-1.mp4'
+import styles from './Media.module.scss'
 function Video(props,ref){
     const videoRef = useRef()
     useImperativeHandle(ref,()=>({
@@ -14,9 +16,9 @@ function Video(props,ref){
 
     return (
         <video
+            className = {clsx(styles.video,styles.container)}
             ref={videoRef}
             src = {video1}
-            width = {280}
         />
     )
 }

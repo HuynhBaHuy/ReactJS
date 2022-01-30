@@ -14,6 +14,7 @@ import ToDoApp from './Component/ToDo'
 import Theme from './Component/ThemeComponent'
 import ToDoGlobals from './Component/ToDoGlobals'
 import Media from './Component/Media'
+import Button from './Component/Button'
 function App() {
   const [showIncrease,setShowIncrease] = useState(false);
   const [showForm,setShowForm] = useState(false);
@@ -32,34 +33,20 @@ function App() {
   return (
     <div className="App" style={{padding:20}}>
       
-      <button onClick={()=>(setShowIncrease(!showIncrease))}>Toggle Counter</button>
-      <br />
-      <button onClick={()=>(setShowForm(!showForm))}>Toggle Form</button>
-      <br />
-      <button onClick={()=>(setShowRandomGift(!showRandomGift))}>Toggle random gift</button>
-      <br />
-      <button onClick={()=>(setShowToDoList(!showToDoList))}>Toggle to do list</button>
-      <br />
-      <button onClick={()=>(setShowCallApi(!showCallApi))}>Toggle api content</button>
-      <br />
-      <button onClick={()=>(setShowCountDown(!showCountDown))}>Toggle count down</button>
-      <br />
-      <button onClick={()=>(setShowPreview(!showPreview))}>Toggle PreviewAvatar</button>
-      <br />
-      <button onClick={()=>(setShowChatApp(!showChatApp))}>Toggle chat app</button>
-      <br />
-      <button onClick={()=>(setShowProduct(!showProduct))}>Toggle product</button>
-      <br />
-      <button onClick={()=>(setShowUpDown(!showUpDown))}>Toggle up down</button>
-      <br />
-      <button onClick={()=>(setShowToDo(!showToDo))}>Toggle to do</button>
-      <br />
-      <button onClick={()=>(setShowThemes(!showThemes))}>Toggle themes</button>
-      <br />
-      <button onClick={()=>(setShowToDoGlobal(!showToDoGlobal))}>Toggle to do global</button>
-      <br />
-      <button onClick={()=>(setShowMedia(!showMedia))}>Toggle media</button>
-      <br />
+      <Button onClick={()=>(setShowIncrease(!showIncrease))}>Toggle Counter</Button>
+      <Button onClick={()=>(setShowForm(!showForm))}>Toggle Form</Button>
+      <Button onClick={()=>(setShowRandomGift(!showRandomGift))}>Toggle random gift</Button>
+      <Button onClick={()=>(setShowToDoList(!showToDoList))}>Toggle to do list</Button>
+      <Button onClick={()=>(setShowCallApi(!showCallApi))}>Toggle api content</Button>
+      <Button onClick={()=>(setShowCountDown(!showCountDown))}>Toggle count down</Button>
+      <Button onClick={()=>(setShowPreview(!showPreview))}>Toggle PreviewAvatar</Button>
+      <Button onClick={()=>(setShowChatApp(!showChatApp))}>Toggle chat app</Button>
+      <Button onClick={()=>(setShowProduct(!showProduct))}>Toggle product</Button>
+      <Button onClick={()=>(setShowUpDown(!showUpDown))}>Toggle up down</Button>
+      <Button onClick={()=>(setShowToDo(!showToDo))}>Toggle to do</Button>
+      <Button onClick={()=>(setShowThemes(!showThemes))}>Toggle themes</Button>
+      <Button onClick={()=>(setShowToDoGlobal(!showToDoGlobal))}>Toggle to do global</Button>
+      <Button primary onClick={()=>(setShowMedia(!showMedia))}>Toggle media</Button>
       {showIncrease && <Counter />}
       {showForm && <Form />}
       {showRandomGift && <Gifts />}

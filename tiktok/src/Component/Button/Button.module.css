@@ -1,0 +1,17 @@
+.btn{
+    padding: 4px 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.btn:hover{
+    opacity:0.9
+}
+.btn:active {
+    color: #fff;
+    background-color: #33CC33;
+}
+
+.primary{
+    color: #fff;
+    background-color: #007bfe
+}

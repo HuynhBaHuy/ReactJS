@@ -5,6 +5,7 @@ import App from './App'
 import reportWebVitals from './reportWebVitals';
 import {StoreProvider} from './store'
 import {ThemeProvider} from './ThemeContext'
+import GlobalStyles from './Component/GlobalStyles'
 // Fake comments
 function emitComment(id) {
   setInterval(()=>{
@@ -22,7 +23,9 @@ ReactDOM.render(
   <React.StrictMode>
     <StoreProvider>
       <ThemeProvider>
+      <GlobalStyles >
         <App />;
+      </GlobalStyles>
       </ThemeProvider>
     </StoreProvider>
   </React.StrictMode>,

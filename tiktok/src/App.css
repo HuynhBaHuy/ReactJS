@@ -1,3 +1,5 @@
+/* Development: npm start / yarn start => CSS inline */
+/* Production: npm run build / yarn build => CSS external */
 .dark {
   color: #fff;
   background-color:#333;
